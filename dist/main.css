@@ -4800,16 +4800,17 @@ ul {
     .recipe__section .recipe__fig .recipe__fig__title {
       background-color: tomato;
       position: absolute;
-      bottom: 0;
+      bottom: 0px;
       left: 50%;
-      transform: translate(-50%, 70%);
+      transform: translate(-50%, 30%);
       color: #fff;
       letter-spacing: 1px;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
       width: 300px;
       line-height: 1.25;
+      margin: 0;
       text-align: center; }
   .recipe__section .recipe__details {
     width: 90%;
