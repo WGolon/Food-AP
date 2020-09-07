@@ -431,7 +431,11 @@ ul {
         text-transform: uppercase;
         letter-spacing: 1px;
         border-radius: 8rem;
+        transition: transform .2s;
         background: linear-gradient(to bottom right, #67d84b, #019715);
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 
