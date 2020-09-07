@@ -3,9 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Setup</title>
+    <title>Food AP</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header class="header">
+
+            <div class="logo">
+                <h1 class="logo__description">Food AP</h1>
+                <img src="./images/soup.png" alt="Image from: http://www.freepik.com/" class="logo__img">
+            </div>
+
+            <form class="search">
+                <input type="text" class="search__field" placeholder="Type here...">
+                <button class="btn search__btn">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </button>
+            </form>
+
+
+            <div class="favourites">
+                <i class="far fa-heart big-like"></i>
+                <ul class="dropdown-content display-none">
+                    <li class="liked_recipe_item">
+                        <img src="https://www.edamam.com/web-img/284/2849b3eb3b46aa0e682572d48f86d487.jpg" alt="" class="recipe__item__img">
+                        <div class="recipe__item__description"> <p> Pizza Dough <i class="fas fa-bacon"></i></p>  <p class="recipe__item__small"> kcal: 1230 <br> wgt: 1230g </p>  </div>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+            <section class="recipe__list__section">
+                <div class="spinning-loader"></div>
+                <ul class="recipe__list">
+                    <!-- <li class="recipe__list__item">
+                        <img src="https://www.edamam.com/web-img/284/2849b3eb3b46aa0e682572d48f86d487.jpg" alt="" class="recpie__img">
+                        <div class="recipe__description"> Pizza Dough <p class="recipe__small"> <i class="fas fa-bacon"></i> calories: 1230, weight: 1230g </p>  </div>
+                    </li> -->
+                </ul>
+
+
+                <div class="pagination">
+                </div>
+
+            </section>
+
+            <section class="recipe__section">   
+            </section>
+
+            <section class="shopping__list__section">
+                <h2 class="title"> Shopping List</h2>
+                <div class="box">
+                    <ul class="shopping__list">
+                    </ul>
+                </div>
+
+                <form class="add__ingredient__form">
+                    <h2 class="add__ingredient__title">Add your own ingredient</h2>
+                    <input type="text" min="" class="add__ingredient__input" required>
+                    <button class="add__ingredient__btn"> Add</button>
+                </form>
+
+                <div class="generate__pdf">
+                    <p class="generate__pdf__info">
+                        Click here to quiclky generate shopping list as a PDF file !
+                    </p>
+                    <button class="generate__pdf__btn">
+                        Generate PDF
+                        <i class="far fa-file-pdf"></i>
+                    </button>
+                </div>
+
+            </section>
+
+        <footer class="footer">
+            Created with  &nbsp <i class="fas fa-heart"></i> &nbsp by Wojciech Golonka.
+             Powered by Edamame Recipe API
+        </footer>
+    </div>
 </body>
 </html>

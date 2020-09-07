@@ -3,3 +3,509 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/regular';
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+:root {
+    --s-loader-wrapper-bg-color: tomato;
+    --s-loader-width: 40px;
+    --s-loader-height: var(--s-loader-width);
+    --s-loader-border-color-trans: tomato;
+    --s-loader-border-color-full: rgb(86, 230, 67);
+  }
+
+body {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom right, rgb(255, 122, 98), rgb(206, 64, 39));
+    min-width: 943px;
+}
+
+.display-none {
+    display: none;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    width: 30%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    padding: 0;
+    margin: 0;
+    font-size: .9rem;
+    background: linear-gradient(to bottom right, #67d84b, #019715);
+    transition: transform .2s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.result__btn {
+    background: linear-gradient(to bottom right, rgb(252, 122, 99), tomato);
+    &:hover {
+        background: linear-gradient(to bottom right, rgb(228, 67, 39), tomato);
+    }
+}
+
+.fa-route {
+    padding-right: 2px;
+}
+
+.fa-check-square {
+    color: rgb(25, 163, 25)
+}
+.fa-seedling {
+    color: green;
+}
+.fa-bacon {
+    color: rgb(209, 46, 17)
+}
+.fa-file-pdf {
+    color: rgb(218, 49, 49);
+}
+.small-like {
+    transition: transform .2s;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.fa-heart.fas {
+    cursor: pointer;
+}
+
+.recipe__list__item--active {
+    background-color: rgb(196, 196, 196);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 10px auto 0 auto;
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(255, 255, 255);
+    grid-template-columns: 300px auto 300px;
+    grid-template-rows: 70px minmax(90vh, auto) 30px;
+}
+
+.header {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 2px solid tomato;
+
+    .logo {
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        font-family: 'Luckiest Guy', cursive;
+        margin: 0 0 0 30px;
+        letter-spacing: 2px;
+        .logo__img {
+            width: auto;
+            display: flex;
+            max-height: 60px;
+        }
+        .logo__description {
+            margin: 0 10px 0 10px;
+            font-size: 2.2rem;
+        }
+    }
+
+    .search {
+        background-color: rgb(189, 189, 189);
+        border-radius: 10rem;
+        height: 40px;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .search__field { 
+            width: 70%;
+            font-size: .8rem;
+            padding: 0 0 0 20px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            transition: all .2s;
+            &:focus {
+                transform: translateX(15px)
+            }
+        }
+        // .search__btn {
+        //     transition: transform .2s;
+        //     &:hover {
+        //         transform: scale(1.1);
+        //     }
+        // }
+    }
+    .favourites {
+        width: auto;
+        margin-right: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        .fa-heart {
+            color: rgb(201, 77, 19);
+            font-size: 2.4rem;
+        }
+        .dropdown-content {
+            position: absolute;
+            top:70px;
+            left:-185px;
+            background-color: #f1f1f1;
+            min-width: 230px;
+            border: 1px solid tomato;
+            box-shadow: 0px 8px 16px 2px rgba(0,0,0,0.6);
+            z-index: 1;
+            font-size: 0.8rem;
+            .liked_recipe_item {
+                max-width: 100%;
+                padding: 5px;
+                display: flex;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(196, 196, 196);
+                }
+                .recipe__item__img {
+                    height: auto;
+                    border: 1px solid rgb(90, 90, 90);
+                    width: 65px;
+                }
+                .recipe__item__description {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 5px;
+                }
+            }
+          }
+    }
+}
+
+.recipe__list__section {
+    background-color: rgb(255, 255, 255);
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid tomato;
+
+        .recipe__list {
+            padding: 0px;
+            width: 100%;
+            margin:0;
+            list-style: none;
+        .recipe__list__item {
+        box-sizing: border-box;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        border-bottom: 1px solid tomato;
+        cursor: pointer;
+        transition: transform .2s;
+        &:hover {
+            transform: translateY(-2px);
+            background-color: rgb(196, 196, 196);
+        }
+        .recpie__img {
+            display: flex;
+            max-height: 65px;
+            border-radius: 50%;
+            border: 1px solid rgb(90, 90, 90);
+            width: auto;
+        }
+        .recipe__description {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 0 0 10px;
+            .recipe__small {
+                font-size: .8rem;
+            }
+        }
+    }
+    }
+    .pagination {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        .result__btn {
+            display: inline-block;
+            height: 20px;
+            margin: 0 auto;
+            width: 80px;
+            border-radius: 10rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+     }
+}
+
+.recipe__section {
+    background-color: rgb(221, 221, 221);
+    grid-column: 2/3;
+    grid-row: 2/3;
+    
+    .recipe__fig {
+        margin:0 auto;
+        padding: 0;
+        position: relative;
+        .recpie__fig__img {
+            display: block;
+            margin: 10px auto 0 auto;
+        }
+        .recipe__fig__title {
+            background-color: tomato;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 70%);
+            color: #fff;
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            width: 300px;
+            line-height: 1.25;
+            text-align: center; 
+        }
+    }
+    .recipe__details {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .recipe__info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 30px;
+        margin: 20px 0;
+    }
+
+    .recipe__ingredients {
+        border: 2px solid tomato;
+        position: relative;
+        border-radius: 12px;
+        padding-top: 5px;
+        margin: 5px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .recipe__ingredients__title {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: rgb(223, 223, 223);
+
+            font-size: 1rem;
+            margin:0;
+            padding:0;
+
+        }
+        li {
+            box-sizing: border-box;
+            padding: 10px 0 10px 20px;
+            width: 50%;
+            margin: 0px auto;
+        }
+    }
+    .recipe__directions {
+        display: flex;
+        margin: 40px auto;
+        width: 90%;
+        justify-content: space-around;
+
+        .btn {
+            width: auto;
+            height: 35px;
+            padding: 0 5px;
+        }
+    }
+}
+.how__to_cook {
+    text-decoration: none;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+}
+.loved {
+    color: red;
+}
+
+
+.shopping__list__section {
+    background-color: rgb(255, 255, 255);
+    grid-column: 3/4;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-left: 2px solid tomato;
+    .box {
+        width: 100%;
+        .shopping__list {
+            overflow: auto;
+            width: 90%;
+            margin: 0 auto;
+            background-color: rgb(223, 223, 223);
+            li {
+                padding: 5px;
+                width: max-content;
+            }
+        }
+    }
+}
+
+.add__ingredient__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: rgb(209, 209, 209);
+    border: 1px solid tomato;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+    .add__ingredient__title{
+        position: absolute;
+        font-size: .8rem;
+        padding: 2px;
+        top:-19px;
+        left:5px;
+        background-color: rgb(209, 209, 209);
+    }
+    .add__ingredient__input {
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        padding: 5px 5px;
+        margin: 0;
+        width: 80%;
+        border-radius: 8rem;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .add__ingredient__btn {
+        cursor: pointer;
+        outline: none;
+        width: 20%;
+        color: #fff;
+        border: none;
+        padding: 5px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 8rem;
+        background: linear-gradient(to bottom right, #67d84b, #019715);
+    }
+}
+
+.generate__pdf {
+    height: auto;
+    width: 247px;
+    padding: 5px;
+    margin-top: 20px;
+    border: 2px dotted tomato;
+    display: flex;
+    justify-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(209, 209, 209);
+    .generate__pdf__info{
+        text-align: center;
+        font-size: .9rem;
+    }
+
+    .generate__pdf__btn {
+        border: 1px solid tomato;
+        border-radius: 8rem;
+        color: black;
+        font-weight: bold;
+        background: #fff;
+        font-size: .9rem;
+        padding: 5px;
+        margin-top: 3px;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(184, 184, 184);
+        }
+    }
+}
+
+.add__to__list {
+    margin-left: 10px;
+}
+
+.footer {
+    background-color: yellow;
+    grid-column: 1/4;
+    grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .fa-heart {
+        color: red;
+    }
+}
+
+.spinning-loader {
+    display: none;
+    margin: 20px auto;
+    width: var(--s-loader-width);
+    height: var(--s-loader-height);
+    border: 5px solid var(--s-loader-border-color-trans);
+    border-left-color: var(--s-loader-border-color-full);
+    border-radius: 50%;
+    background: transparent;
+    animation-name: rotate-s-loader;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    position: relative;
+  }
+  
+  @keyframes rotate-s-loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
