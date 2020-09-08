@@ -4577,6 +4577,7 @@ readers do not read off random characters that represent icons */
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   box-sizing: border-box;
   background-image: linear-gradient(to bottom right, #ff7a62, #ce4027);
   min-width: 943px; }
@@ -4586,6 +4587,13 @@ body {
 
 p {
   margin: 0; }
+
+.important__info {
+  margin: 0 auto;
+  padding: 5px 0 0 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #2e2e2e; }
 
 ul {
   list-style: none;
@@ -4649,7 +4657,7 @@ ul {
   font-family: 'Roboto', sans-serif;
   background-color: white;
   grid-template-columns: 300px auto 300px;
-  grid-template-rows: 70px minmax(90vh, auto) 30px; }
+  grid-template-rows: 70px minmax(84vh, auto) 30px; }
 
 .header {
   grid-column: 1/4;
